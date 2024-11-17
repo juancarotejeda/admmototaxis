@@ -41,7 +41,7 @@ body {
       font-size: 3.5rem;
     }
   .publicidad img{
-    padding-left: 100px;
+    padding-left: 200px;
   }
   
   
@@ -74,6 +74,16 @@ body {
 
   
   }
+/*
+  @media screen and (max-width:768px) {
+    .publicidad img{
+      padding-left: 200px;
+    }
+  
+  }
+*/
+
+
   
   .b-example-divider {
     width: 100%;
@@ -605,15 +615,8 @@ padding-top: 20px;
   position: absolute;
   top:0; left: 0;
   z-index: -1;
-}
-@media screen and (max-width:800px) {
-  .content-modal{
-      width: 90%;
-  }
+}*/
 
-
-}
-*/
 
 #btn-ingreso{
   display: none;
