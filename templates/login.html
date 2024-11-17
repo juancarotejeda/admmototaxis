@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>presidentes</title>
+    <link rel="webside icon" type="png" href="/static/favicon/favicon-32x32.png"> 
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">    
+    <!-- Custom styles for this template -->  
+    <link href="/static/css/navbar-static.css" rel="stylesheet">
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <link src="/static/js/color-modes.js"> 
+  </head>
+<body>
+<div class="publicidad">
+    <img class="logo" src="/static/imagen/barrio_seguro-intran.gif" alt="publicidad">
+</div>    
+<fieldset class="login-entrada">
+    <form  method='POST' action="/login">    
+    <legend><h1>GRUPO ACTEC MOTOBEN</h1></legend> 
+    <ol>
+    <li>
+        <h3>ADMINISTRACION</h3> 
+    </li>    
+    <li>  
+    {% with messages = get_flashed_messages()%}
+    {% if messages%}
+    {% for message in messages%}
+       <div class="msg">{{message}}</div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%} 
+    </li>
+    <li> 
+    <label for="parada">Parada</label>          
+    <select name="parada" id="parada">
+          <optgroup label="Paradas">
+            <option selected ></option> 
+            {%for parada in paradas%}  
+            <option >{{parada}}</option>
+            {%endfor%}
+          </optgroup>
+    </select>      
+    </li> 
+    <li>     
+      <label for="cedula">Cedula</label>
+      <input type="text" name="cedula" id="cedula" placeholder="Cedula" required>       
+    </li>
+    <li> 
+      <label for="clave">Clave</label>
+      <input type="password" id="clave" name="clave" placeholder="Contraseña" required>    
+    </li>
+    </ol>
+    <button type="submit"  class="button">ENTRAR</button>
+    </form>
+    </fieldset> 
+</body>
+</html>

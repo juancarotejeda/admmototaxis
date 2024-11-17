@@ -1,0 +1,684 @@
+body {
+    padding-bottom: 20px;
+    background-color: black;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .logo{
+    width: 30px;
+    height: 30px;  
+  }
+  
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .publicidad{
+    align-items: center;
+    height: 200px;
+    width: auto;
+    background: #000000;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  
+  }
+  
+  .publicidad img{
+    height: 200px;
+    width: max-content; 
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  .publicidad img{
+    padding-left: 100px;
+  }
+  
+  
+  }
+  
+  
+  @media (max-width:768px) {
+  
+    .tables{
+      min-width: 460px;
+    }
+  
+   .encabezado{
+    min-width: 460px;
+   } 
+  
+   .navbar {
+    min-width: 460px;
+   
+  }
+  
+  .publicidad{
+    min-width: 460px; 
+  }
+
+  .pago{
+    min-width: 460px;   
+  }
+  
+
+  
+  }
+  
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+   
+  }
+  
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+  
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+  
+  .encabezado{
+    margin:auto; 
+    background-color: #000000;
+    color: white;
+    font-size: 14px;
+    padding: 30px;
+    width: auto;
+    border:solid 5px  LightSteelBlue;
+    overflow: hidden;
+  }        
+  .encabezado input{
+    font-size:14px;
+    color: rgb(255, 255, 255);
+    width:200px;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    margin-left: 100px;
+    }
+    
+  
+  
+    .encabezado ol li{
+            line-height: 25px;
+            list-style-type: none;
+            padding: 4px;
+            }
+  
+  .encabezado h1{
+    text-align: center;
+    margin-bottom: 10px;            
+    } 
+  
+/*========================================tablas=======================*/  
+    .tables{
+      background-color: #000000;
+      color: white;
+      font-size: 12px;
+      padding: 30px;
+      width: auto;
+      border:solid 10px LightSteelBlue inset;
+      overflow: scroll;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      }
+      
+  .tables fieldset{
+      border: none;
+      }
+      
+  .tables h1{
+      text-align: center;
+      margin-bottom: 10px;
+      }   
+      
+  .tables table{
+          margin: auto;  
+           width:350px;
+           text-align: center;
+         
+         }
+         
+         
+  .tables th, td {
+             width:min-content;
+             border: 0;
+             color: white;
+           }
+             
+  .tables  ol li{
+      line-height: 25px;
+      list-style: none;
+      list-style-type: none;
+    padding-top: 20px;
+      }
+      
+  
+  
+.tables select{
+      font-size:12px;
+      background: yellow;
+      border:solid 1px Green;
+      border-radius: 5px;
+      float: right;
+      margin-right: 10px;        
+      width: 80px;
+      height: 20px;
+}
+  
+.tables select option{
+        background:black;
+        color:red;
+}
+  
+.tables select option:disabled{
+        background: blue;
+}
+
+.tables input{
+  font-size:12px;
+  background: yellow;
+  border:solid 1px Green;
+  border-radius: 5px;
+  float: right;
+  margin-right: 40px;   
+  width: 80px;
+  height: 20px;
+  }  
+
+  .tables button{
+    font-size:12px;
+    background: yellow;
+    color: #000;
+    border-radius: 5px;
+    float: right;
+    width: 92%;
+    height: 30px;
+    margin: top 5px;
+    margin-bottom: 10px;
+    margin-right: 30px;          
+}    
+  
+/*-----------------------------------login-------------------------------*/
+.login{
+            
+  background-color:black;
+  color: white;
+  font-size: 12px;
+  padding: 30px;
+  width: auto;
+  border:solid 10px LightSteelBlue;
+  overflow: hidden;
+  margin-bottom: 10px;
+  }
+
+  .login  ol li{
+      line-height: 25px;
+      list-style: none;
+      padding: 4px;
+      }
+
+  .login h1{
+          text-align: center;
+          margin-bottom: 10px;            
+          }                 
+  
+
+  .login input{
+  font-size:12px;
+  background: yellow;
+  border:solid 1px Green;
+  border-radius: 5px;
+  float: right;
+  width: auto;
+  margin-right: 40px;
+
+  width: 150px;
+  }
+
+.login button{
+  font-size:12px;
+  background: yellow;
+  border:solid 1px Green;
+  width: 150px;
+  height: 30px;
+  float: right;
+  margin-right: 100px;
+  color: #000000;
+  border-radius: 5px;
+
+  }
+  
+.login input[type="password"]{
+  font-size: 12px;
+  width: 150px;
+  height: 20px;
+  padding: 10px;
+  border: none;
+  background:  yellow;
+}    
+
+.msg{
+color: rgb(255, 87, 20);
+font-size: 20px;
+} 
+  
+
+
+/*-----------------------------------login prinsipal------------------------*/        
+
+          
+
+
+.login-entrada{
+  background-color: #000000;
+  color: white;
+  font-size: 12px;
+  padding: 30px;
+  width: auto;
+  height: 400px;
+  overflow: hidden;
+  border:solid 10px LightSteelBlue;
+  margin-top: 60px;
+  }
+  
+.login-entrada fieldset{
+  border: none;
+  }
+  
+.login-entrada h1{
+  text-align: center;
+  margin-bottom: 5px;            
+  }        
+ 
+  .login-entrada h3{
+    text-align: center;
+    margin-bottom: 5px;            
+    }     
+
+.login-entrada  ol li{
+  line-height: 25px;
+  list-style: none;
+  list-style-type: none;
+padding-top: 20px;
+  }
+  
+.login-entrada  [required]{
+  border:solid 1px red;
+  }
+  
+.login-entrada input:required {
+  outline: 1px solid red;
+  }
+
+.login-entrada select{
+      font-size:12px;
+      background: yellow;
+      border:solid 1px Green;
+      border-radius: 5px;
+      float: right;
+      margin-right: 20px;        
+      width: 250px;
+      height: 30px;
+    }
+
+.login-entrada select option{
+      background:white;
+      color:red;
+    }
+
+.login-entrada select option:disabled{
+      background: blue;
+    }
+
+.login-entrada input{
+      font-size:12px;
+      background: yellow;
+      border:solid 1px Green;
+      border-radius: 5px;
+      float: right;
+      margin-right: 20px;  
+      height: 30px; 
+      width: 250px;
+      }
+
+.login-entrada button{
+      font-size:14px;
+      background: yellow;
+      color: black ;
+      font-weight: 700;
+      border-radius: 5px;
+      width: 350px;
+      height: 30px;
+      text-align: center;
+      padding-top: 5px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      float: right;
+      margin-right:20px;   
+    
+      }   
+      
+      
+.pago{
+  background-color: #000000;
+  color: white;
+  font-size: 12px;
+  width: auto;
+  border:solid 5px LightSteelBlue;
+  margin-bottom: 10px;
+  height: 325px;
+  }
+  
+  .pago fieldset{
+  border: none;
+  }
+  
+  .pago h1{
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 10px;            
+      } 
+  
+  .pago  ol li{
+  line-height: 25px;
+  list-style: none;
+  margin-top: 15px;
+  }
+  
+
+
+  .pago select{
+    font-size:12px;
+    background: yellow;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 30px;
+    float: right;
+  }
+
+    .pago select option{
+      background:black;
+      color:red;
+    }
+    .pago select option:disabled{
+      background: blue;
+    }
+
+    .pago input{
+      font-size:12px;
+      background: yellow;
+      border-radius: 5px;
+      float: right;
+      width: 150px;
+      height: 30px;
+      margin: top 5px;
+      margin-bottom: 10px;
+      margin-right: 30px;
+      }
+
+  .pago button{
+      font-size:12px;
+      background: yellow;
+      border-radius: 5px;
+      float: right;
+      width: 92%;
+      height: 30px;
+      margin: top 5px;
+      margin-bottom: 10px;
+      margin-right: 30px;
+     
+      }  
+
+      .bt-modal {
+        width: 100%;
+        height: 10%;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }      
+
+      .bt-regresar label{
+        padding: 10px 15px;
+        background-color: #fe2701;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 100px;
+        transition: all 300ms ease;
+      }
+      .bt-regresar label:hover{
+        background-color: #6a0401;
+      }
+
+      #bt-regresar{
+        display: none;
+      }
+      
+      #bt-regresar:checked ~ .container-regreso{
+        display: block;
+      }
+      
+
+      
+/*===========================ventana modal===============================*/
+
+.boton-modal label{
+  padding: 10px 15px;
+  background-color: #5488a3;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.boton-modal label:hover{
+  background-color: #185E83;
+}
+/*:::Fin Boton-Modal:::*/
+
+/*:::Ventana Modal:::*/
+
+
+
+
+
+.container-listado{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: rgb(0, 0, 0);
+  display: none;
+
+}
+
+#btn-listado{
+  display: none;
+}
+
+#btn-listado:checked ~ .container-listado{
+  display: block;
+}
+
+.content-vu{
+  width: 100%;
+  height: 90%;
+  position: relative;
+  top: 20; left: 20;
+  padding: 20px;
+  background: #0157f7;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.content-botton {
+  width: 100%;
+  height: 10%;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-cerrar label{
+  padding: 7px 10px;
+  background-color: #5488a3;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.content-botton label:hover{
+  background-color:#185E83;
+}
+
+/*
+.cerrar-modal{
+  width:100%;
+  height: 100vh;
+  position: absolute;
+  top:0; left: 0;
+  z-index: -1;
+}
+@media screen and (max-width:800px) {
+  .content-modal{
+      width: 90%;
+  }
+
+
+}
+*/
+
+#btn-ingreso{
+  display: none;
+}
+
+#btn-ingreso:checked ~ .container-ingreso{
+  display: block;
+}
+
+.container-ingreso{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: rgb(0, 0, 0);
+  display: none;
+}
+
+#btn-gastos{
+  display: none;
+}
+
+#btn-gastos:checked ~ .container-gastos{
+  display: block;
+}
+
+.container-gastos{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: rgb(0, 0, 0);
+  display: none;
+}
+
+#btn-prestamos{
+  display: none;
+}
+
+#btn-prestamos:checked ~ .container-prestamos{
+  display: block;
+}
+
+.container-prestamos{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: rgb(0, 0, 0);
+  display: none;
+}
+
+#btn-abonos{
+  display: none;
+}
+
+#btn-abonos:checked ~ .container-abonos{
+  display: block;
+}
+
+.container-abonos{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background-color: rgb(0, 0, 0);
+  display: none;
+}

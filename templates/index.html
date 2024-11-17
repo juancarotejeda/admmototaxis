@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presidente</title>
+    <link rel="webside icon" type="png" href="/static/favicon/favicon-32x32.png"> 
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">    
+    <!-- Custom styles for this template -->  
+    <link href="/static/css/navbar-static.css" rel="stylesheet">
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <link src="/static/js/color-modes.js"> 
+  </head>
+  <body>
+  <div id="regreso"></div>   
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo" src="/static/favicon/favicon-32x32.png" alt="logo">   MOTOTAXISTAS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#lista_pagos">Lista de pagos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ingresos">Recibo de ingresos</a>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gastos">Recibo de gastos</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Prestamos">Comprovante de prestamo</a>
+        </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#abono">Comprovante de abono</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#banco">Informacion bancaria</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#pdf" data-bs-toggle="dropdown" aria-expanded="false">Recibos</a>
+      <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#historia_aportes">Historico de aportes</a></li>
+          <li><a class="dropdown-item" href="#otros">Another action</a></li>
+          <li><a class="dropdown-item" href="#galeria">Galeria de imagenes</a></li>
+      </ul>
+      </li>
+      </ul>
+      <form role="search">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      </div>
+      </div>
+      </nav>
+      </div>
+      <div class="publicidad">
+         <img class="logo" src="/static/imagen/barrio_seguro-intran.gif" alt="publicidad">
+      </div>      
+      <section id="lista_pagos">
+      <fieldset class="tables">
+      <form action="/data_cuotas" method="POST">   
+      <legend><h1>LISTA DE PAGOS</h1></legend> 
+         <ol>
+         <li>
+         <label for="paradas">PARADA:</label>             
+         <input type="text" name="parada" value="{{parada}}" id="paradas">
+         </li>
+         <li>                     
+         <label for="fecha">FECHA:</label>
+         <input type="text" name="time" value="{{fecha}}" id="fecha">
+         </li>
+         <li>
+         <label for="miembro">MIEMBROS:</label>
+         <input type="text" name="numero" value="{{ cabecera[0]}}" id="miembro">         
+         </li>
+         <li>
+         <label for="valor">CUOTA:</label>
+         {%for dat in informacion %} 
+         <input type="text" name="valor" value="{{dat[6]}}" id="valor">
+         {%endfor%}
+         </li>
+         </ol>
+         <table>
+         <tr>
+            <th>ITEM</th>
+            <th>PAGO</th>
+            <th>NOMBRE_DEL_ASOCIADO</th>
+            <th>CEDULA</th>
+         </tr>
+         {% for user in datos %}
+         <tr>
+            <td>
+             {{ user[0]}}
+             <input type="hidden" value="{{ user[0]}}" name="item">
+            </td>
+            <td>
+            <label for="estado" > estado</label>   
+            <select name="select" id="estado">
+                  <optgroup label="Estado">  
+                  <option selected >no_pago</option>
+                  <option >pago</option>
+                  </optgroup>
+            </select>
+            <input type="hidden" value="select" name="estado">
+            </td>
+            <td>
+            {{ user[1]}}
+            <input type="hidden" value="{{ user[1]}}" name="nombre">
+            </td>
+            <td>
+            {{ user[2]}}
+            <input type="hidden" value="{{ user[2]}}" name="cedula">
+            </td>
+         </tr>
+         {%endfor%}
+      </table>
+      <button type="submit">ENVIAR</button>
+      <div class="bt-modal">
+      <div class="boton-modal">
+        <label for="btn-listado">
+            Ver finanzas
+        </label>
+      </div>
+      <div class="bt-regresar">
+        <label for="regreso">
+        <a href="#regreso">regreso</a> 
+      </label>
+      </div>
+      </div>     
+      </div>
+      </form>
+      </fieldset>
+      </section> 
+      <section id="ingresos" >
+        <fieldset class="pago">        
+        <form action="data_ingresos" method="POST">
+        <legend><h1>REPORTE DE INGRESOS</h1></legend>       
+        <ol> 
+        <li>   
+        {%for datos in informacion %}
+           <h1>PARADA:{{datos[1]}}</h1>
+           <input type="hidden" name="parada" value="{{datos[1]}}" id="parada"> 
+        {%endfor%} 
+        </li> 
+        <li>
+          <label for="fecha">FECHA:</label>
+          <input type="text" name="time" value="{{fecha}}" id="fecha">
+          </li>         
+        <li>      
+        <label for="descripcion_i">DESCRIPCION:</label>
+        <select name="descripcion_i" id="descripcion_i">
+           <option >No ingresos</option>
+           <option >Ingresos por publicidad</option>
+           <option >Aporte a la parada</option>
+           <option >Ayuda del estado</option>
+           <option >Recaudacion de Fondo</option>
+           <option >Ingreso segun recibo anexo</option>
+        </select>
+        </li>
+        <li>
+        <label for="cantidad">CANTIDA:</label>
+        <input type="text" name="cantidad_i" id="cantidad" required>
+        </li>
+        </ol>
+        <button type="submit">ENVIAR</button>
+        <div class="bt-modal">
+        <div class="boton-modal">
+          <label for="btn-ingreso">
+              Ver Ingresos
+          </label>
+        </div>
+        <div class="bt-regresar">
+          <label for="regreso">
+          <a href="#regreso">regreso</a> 
+        </label>      
+        </div>
+        </fieldset>
+        </form>   
+        </section>
+
+        <section id="gastos">
+          <fieldset class="pago">  
+          <form action="/data_gastos" method="POST">
+          <legend><h1>REPORTE GASTOS </h1></legend>   
+          <ol> 
+          <li> 
+          {%for datos in informacion %}
+          <h4>PARADA:{{datos[1]}}</h4>
+          <input type="hidden" name="parada" value="{{datos[1]}}" id="parada">
+          {%endfor%}
+          </li>
+          <li>
+          <label for="fecha">FECHA:</label>
+          <input type="text" name="time" value="{{fecha}}" id="fecha"> 
+          </li>
+          <li>              
+             <label for="descripcion">DESCRIPCION:</label>
+             <select name="descripcion_g" id="descripcion">
+                <option > </option>
+                <option >Pago a la Administradora</option>
+                <option >Ayuda para la Federacion</option>
+                <option >Compra de casco protector</option>
+                <option >Ayuada a Miembro</option>
+                <option >Compra de respuestos</option>
+                <option >Gastos segun Factura anexa</option>
+             </select>
+          </li>  
+          <li>      
+          <label for="cantidad" >CANTIDA:</label>
+          <input type="text" name="cantidad_g"id="cantidad" required >
+          </li>
+          </ol>
+          <button type="submit">ENVIAR</button>
+          <div class="bt-modal">
+          <div class="boton-modal">
+            <label for="btn-gastos">
+                Ver Gastos
+            </label>
+          </div>
+          <div class="bt-regresar">
+            <label for="regreso">
+            <a href="#regreso">regreso</a> 
+          </label>         
+          </div>
+          </form>
+          </fieldset>
+          </section>
+
+        <section id="Prestamos" >
+          <fieldset class="pago"> 
+          <form action="/data_prestamos" method="POST">  
+          <legend><h1>REPORTE PRESTAMOS</h1></legend>    
+          {%for datos in informacion %}   
+          <input type="hidden" name="parada" value="{{datos[1]}}" id="parada">  
+          {%endfor%}      
+          <ol>  
+          <li>
+          {%for datos in informacion %}
+             <h1>PARADA: {{datos[1]}}</h1>
+          {%endfor%}
+          </li> 
+          <li>   
+          <input type="text" name="time" value="{{fecha}}" id="fecha" readonly><br>  
+          </li> 
+          <li> 
+          <label for="beneficiado">BENEFICIADO:</label>  
+          <select name="descripcion_p" id="beneficiado" required>         
+             <option ></option>
+             {% for usuario in miembros %}
+             <option>{{usuario[1]}}</option>
+             {%endfor%}
+          </select>
+          </li>
+          <li>
+          <label for="monto">MONTO:</label>
+          <input type="text" name="cantidad_p" id="monto" required>
+          </li>
+          </ol>
+          <button type="submit">ENVIAR</button>
+          <div class="bt-modal">
+            <div class="boton-modal">
+              <label for="btn-prestamos">
+                  Ver Prestamos
+              </label>              
+            </div>
+            <div class="bt-regresar">
+              <label for="regreso">
+              <a href="#regreso">regreso</a> 
+            </label>          
+            </div>
+          </form>
+          </fieldset>
+          </section>
+          <section id="abono">
+            <fieldset class="pago">        
+            <form action="data_abonos" method="POST">
+            <legend><h1>REPORTE DE ABONO A PRESTAMOS</h1></legend>    
+            {%for datos in informacion %}   
+                <input type="hidden" name="parada" value="{{datos[1]}}" id="parada">  
+            {%endfor%}  
+            <ol>   
+            <li>
+            {%for datos in informacion %}
+            <h1>PARADA: {{datos[1]}}</h1>
+            {%endfor%} 
+            </li>                   
+            <li>
+            <label for="fecha">FECHA:</label>
+            <input type="text" name="time" value="{{fecha}}" id="fecha">
+            </li>
+            <li>
+            <label for="abonar">ABONAR A:</label>
+            <select name="descripcion_a" id="abonar">                 
+               <option value="Nigun Abono ">Nigun Abono</option>
+               {% for usuario in miembros %}
+               <option >{{usuario[1]}}</option>
+               {%endfor%}
+            </select>
+            </li>
+         
+            <li>
+            <label for="cantidad">CANTIDA:</label>
+            <input type="text" name="cantidad_a" id="cantidad"  value=0.0>
+            </li>
+            </ol> 
+            <button type="submit">ENVIAR</button> 
+            <div class="bt-modal">
+              <div class="boton-modal">
+                <label for="btn-abonos">
+                    Ver Abonos
+                </label>
+              </div>
+              <div class="bt-regresar">
+                <label for="regreso">
+                <a href="#regreso">regreso</a> 
+              </label>             
+              </div>
+         </fieldset>
+         </section>
+      <section id="banco">
+        <fieldset class="pago">
+        <form action="/data_bancos" method="post"> 
+        {%for datos in informacion %}   
+        <input type="hidden" name="parada" value="{{datos[1]}}" id="parada">      
+        <legend><h1>REPORTE BANCARIO</h1></legend>      
+        <ol>    
+        <li>   
+        <h1>PARADA:{{datos[1]}}</h1>
+        </li>   
+        <li>    
+           <label for="fecha">FECHA:</label>
+           <input type="text" name="time" value="{{fecha}}" id="fecha">
+        </li>
+        <li>                   
+           <label for="banco">BANCO:</label>
+           <input type="text" name="banco" value="{{datos[8]}}" id="banco">
+        </li>
+        <li>     
+           <label for="numero">CUENTA #:</label>
+           <input type="text" name="cuenta" value="{{datos[9]}}" id="numero">
+        </li> 
+        <li>     
+           <label for="operacion">Tipo de Operacion:</label>
+           <select name="operacion" id="operacion">
+              <optgroup label="Tipo de operacion">  
+              <option selected ></option>
+              <option >Deposito</option>
+              <option >Retiro</option>         
+              </optgroup>
+        </select> 
+        <input type="hidden" value="operacion" name="operacion">
+      </li> 
+      <li>    
+         <label for="balance">Monto de operacion:</label>
+         <input type="text" name="balance" value="0.0000" id="balance">
+      </li>
+      <li>
+         <button type="submit">ENVIAR</button>
+         <div class="bt-modal">
+          <div class="boton-modal">
+            <label for="btn-abonos">
+                Ver Abonos
+            </label>
+          </div>
+          <div class="bt-regresar">
+            <label for="regreso">
+            <a href="#regreso">regreso</a> 
+          </label>             
+          </div>         
+        </div>
+
+
+      </li> 
+      </ol>   
+      {%endfor%}
+      </form>     
+      </fieldset>
+      </section>   
+      <input type="checkbox" id="btn-listado">        
+      <div class="container-listado">
+      <div class="content-vu">  
+          <table>
+            <tr>
+               <th>Item</th>
+               <th>Informacion financiera</th>
+               <th>Total al momento</th>
+            </tr>
+            <tr>
+             <tD>1</tD>
+             <td>Historico de aporta de los asociados :</td>
+             <td>{{diario[4]}}RD$</td>
+          </tr>
+          <tr>
+             <tD>2</tD>
+             <td>Historico de ingresos por otras actividades :</td>
+             <td> {{diario[2]}}RD$</td>
+          </tr>
+          <tr>
+             <tD>3</tD>
+             <td> Historico de abonos a prestamos de los asociados:</td>
+             <td>{{diario[6]}}RD$</td>
+          </tr>
+            <tr>
+             <tD>4</tD>
+             <td>Historico de Prestamos facilitados los asociados :</td>
+             <td>{{diario[1]}}RD$</td>
+          </tr>
+          <tr>
+             <tD>5</tD>
+             <td>Historial de cuotas no pagadas por los asociados:</td>
+             <td>{{diario[5]}}RD$</td>
+          </tr>
+          <tr>
+             <tD>6</tD>
+             <td>Historial de gastos incurridos por la parada :</td>
+             <td>{{diario[3]}}RD$</td>
+          </tr>
+       
+            <tr>
+               <tD>7</tD>
+               <td>Informacion de balance bancario actualizada:</td>
+               <td>{{diario[7]}}RD$</td>
+            </tr>
+            <tr>
+               <tD>8</tD>
+               <td>Balance segun datos aportas por el presidente:</td>
+               <td>{{diario[0]}}RD$</td>
+            </tr>
+         </table>
+        </div>
+          <div class="content-botton">
+                <div class="btn-cerrar">
+                    <label for="btn-listado">Cerrar</label>
+                </div>
+          </div>
+        </div>
+
+        <input type="checkbox" id="btn-ingreso">        
+        <div class="container-ingreso">
+        <div class="content-vu">  
+          <h1>INGRESO</h1>
+        </div>
+        <div class="content-botton">
+          <div class="btn-cerrar">
+              <label for="btn-ingreso">Cerrar</label>
+          </div>
+        </div>
+        </div>
+  
+        <input type="checkbox" id="btn-gastos">        
+        <div class="container-gastos">
+        <div class="content-vu">  
+          <h1>GASTOS</h1>
+        </div>
+        <div class="content-botton">
+          <div class="btn-cerrar">
+              <label for="btn-gastos">Cerrar</label>
+          </div>
+        </div>
+        </div>  
+
+        <input type="checkbox" id="btn-prestamos">        
+        <div class="container-prestamos">
+        <div class="content-vu">  
+          <h1>PRESTAMOS</h1>
+        </div>
+        <div class="content-botton">
+          <div class="btn-cerrar">
+              <label for="btn-prestamos">Cerrar</label>
+          </div>
+        </div>
+        </div> 
+        
+        <input type="checkbox" id="btn-abonos">        
+        <div class="container-abonos">
+        <div class="content-vu">  
+          <h1>ABONOS</h1>
+        </div>
+        <div class="content-botton">
+          <div class="btn-cerrar">
+              <label for="btn-abonos">Cerrar</label>
+          </div>
+        </div>
+        </div>      
+  </body>
+</html>
