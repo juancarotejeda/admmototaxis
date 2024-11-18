@@ -5,6 +5,7 @@ body {
   
   .navbar {
     margin-bottom: 20px;
+    margin-top: 10px;
   }
   
   .logo{
@@ -51,27 +52,36 @@ body {
   @media (max-width:768px) {
   
     .tables{
-      min-width: 460px;
+      min-width: 445px;
     }
   
    .encabezado{
-    min-width: 460px;
+    min-width: 445px;
    } 
   
    .navbar {
-    min-width: 460px;
+    min-width: 445px;
    
   }
   
   .publicidad{
-    min-width: 460px; 
+    min-width: 445px; 
   }
 
   .pago{
-    min-width: 460px;   
+    min-width: 445px;   
   }
   
+  .publicidad img{
+    min-width: 445px;
+   margin-left: 15px;
+  }
 
+  .login-entrada{
+    min-width: 445px;
+  }
+
+  
   
   }
 /*
@@ -344,12 +354,11 @@ font-size: 20px;
   background-color: #000000;
   color: white;
   font-size: 12px;
-  padding: 30px;
+  padding: 15px;
   width: auto;
   height: 400px;
-  overflow: hidden;
   border:solid 10px LightSteelBlue;
-  margin-top: 60px;
+  margin-top: 20px;
   }
   
 .login-entrada fieldset{
