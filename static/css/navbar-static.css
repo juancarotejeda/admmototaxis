@@ -86,10 +86,8 @@ body {
     text-align: center;
     font-size: 12;
   }
-
-      
-   
-    .login-entrada h3{
+ 
+  .login-entrada h3{
       text-align: center;
        font-size: 10;    
       }     
@@ -194,18 +192,18 @@ body {
     
   
   
-    .encabezado ol li{
-            line-height: 25px;
-            list-style-type: none;
-            padding: 4px;
-            }
+  .encabezado ol li{
+          line-height: 25px;
+          list-style-type: none;
+          padding: 4px;
+          }
   
   .encabezado h1{
     text-align: center;
     margin-bottom: 10px;            
     } 
   
-/*========================================tablas=======================*/  
+/*=============================tablas===============================*/  
     .tables{
       background-color: #000000;
       color: white;
@@ -257,7 +255,7 @@ body {
       border-radius: 5px;
       float: right;
       margin-right: 10px;        
-      width: 80px;
+      width: 120px;
       height: 20px;
 }
   
@@ -284,6 +282,7 @@ body {
   .tables button{
     font-size:12px;
     background: yellow;
+    border:solid 1px Green;
     color: #000;
     border-radius: 5px;
     float: right;
@@ -426,31 +425,30 @@ padding-top: 20px;
     }
 
 .login-entrada input{
-      font-size:12px;
-      background: yellow;
-      border:solid 1px Green;
-      border-radius: 5px;
-      float: right;
-      margin-right: 20px;  
-      height: 30px; 
-      width: 250px;
-      }
+  font-size:12px;
+  background: yellow;
+  border:solid 1px Green;
+  border-radius: 5px;
+  float: right;
+  margin-right: 20px;  
+  height: 30px; 
+  width: 250px;
+}
 
 .login-entrada button{
-      font-size:14px;
-      background: yellow;
-      color: black ;
-      font-weight: 700;
-      border-radius: 5px;
-      float: right;
-      margin-right:20px; 
-      width: 250px;
-      height: 30px;
-      text-align: center;
-      padding-top: 5px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      }   
+  font-size:14px;
+  background: yellow;
+  color: black ;
+  border-radius: 5px;
+  float: right;
+  margin-right:20px; 
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}   
       
       
 .pago{
@@ -461,23 +459,23 @@ padding-top: 20px;
   border:solid 5px LightSteelBlue;
   margin-bottom: 10px;
   height: 325px;
-  }
+}
   
   .pago fieldset{
   border: none;
-  }
+}
   
-  .pago h1{
-      text-align: center;
-      font-size: 15px;
-      margin-bottom: 10px;            
-      } 
+.pago h1{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;            
+} 
   
-  .pago  ol li{
-  line-height: 25px;
-  list-style: none;
-  margin-top: 15px;
-  }
+.pago  ol li{
+    line-height: 25px;
+    list-style: none;
+    margin-top: 15px;
+}
   
 
 
