@@ -23,65 +23,78 @@ body {
   
   .publicidad{
     align-items: center;
-    height: 200px;
+    height: 150px;
     width: auto;
     background: #000000;
     color: white;
     margin-bottom: 10px;
     border-radius: 10px;
-  
+  display: flex;
+  justify-content: center;
+  align-content: center;
   }
   
   .publicidad img{
-    height: 200px;
+    height: 150px;
     width: max-content; 
   }
   
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
-    }
-  .publicidad img{
-    padding-left: 200px;
-  }
+
   
   
   }
   
+  }  
   
   @media (max-width:768px) {
   
     .tables{
-      min-width: 445px;
+      min-width: 400px;
     }
   
    .encabezado{
-    min-width: 445px;
+    min-width: 400px;
    } 
   
    .navbar {
-    min-width: 445px;
+    min-width: 400px;
    
   }
   
   .publicidad{
-    min-width: 445px; 
+    min-width: 400px; 
   }
 
   .pago{
-    min-width: 445px;   
+    min-width: 400px;   
   }
   
   .publicidad img{
-    min-width: 445px;
-   margin-left: 15px;
+    min-width: 400px;
+  
   }
 
   .login-entrada{
-    min-width: 445px;
+    min-width: 400px;
   }
 
+  .login-entrada h1{
+    text-align: center;
+    font-size: 12;
+           
+    }        
+   
+    .login-entrada h3{
+      text-align: center;
+       font-size: 10;    
+      }     
   
+  
+
+
   
   }
 /*
