@@ -50,8 +50,11 @@ def log():
             datos=funciones.aportacion(cur,parada) 
             cabecera=funciones.info_cabecera(cur,parada)
             diario=funciones.diario_general(cur,parada)
+            print(diario)
+            prestamos=funciones.lista_prestamos(cur,parada)
+            print(prestamos)
             cur.close()
-            return render_template('index.html',informacion=informacion,miembros=miembros,datos=datos,cabecera=cabecera,fecha=fecha,diario=diario,parada=parada)
+            return render_template('index.html',informacion=informacion,miembros=miembros,datos=datos,cabecera=cabecera,fecha=fecha,diario=diario,prestamos=prestamos,parada=parada)
         else:
             msg = 'Incorrecto nombre de usuario / password !'   
             flash(msg)        

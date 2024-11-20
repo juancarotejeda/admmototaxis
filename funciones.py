@@ -138,6 +138,11 @@ def prestamo_aport(cur,parada):
     else:
       return [] 
 
+def lista_prestamos(cur,parada):
+    nom=[]
+    cur.execute(f"SELECT prestamo_a FROM {parada}_prestamos")
+    nombres=cur.fetchall()
+    return nombres
 
 def verif_dig(cur,nombre,password):
     cur.execute(f"SELECT username FROM digitadores WHERE password='{password}'")
@@ -199,7 +204,7 @@ def report_abono(cur,parada,fecha,abono_a,cantidad_a):
     abono_persona=[]
     cur.execute(f"CREATE TABLE IF NOT EXISTS {parada}_abonos( id int NOT NULL AUTO_INCREMENT ,fecha VARCHAR(50)  NULL,  abono_a VARCHAR(50)  NULL, monto_abono DECIMAl(10,2) unsigned DEFAULT 0, balance_prestamo DECIMAl(10,2) unsigned DEFAULT 0 , PRIMARY KEY(id))" )                                                                                                                            
     cur.execute(f"INSERT INTO {parada}_abonos(fecha, abono_a, monto_abono) VALUES('{fecha}', '{abono_a}', {cantidad_a})")         
-    cur.execute(f"SELECT SUM(monto_abono) FROM  {parada}_abonos ")
+    cur.execute(f"SELECT SUM(monto_abono) FROM  {parada} ")
     suma=cur.fetchone() 
     for n_abonos in suma: 
        n_abonos  
@@ -212,7 +217,7 @@ def report_abono(cur,parada,fecha,abono_a,cantidad_a):
     for prestamo in prestado:
         prestamo          
     if prestamo==[] or prestamo== 0:
-      cur.execute(f"UPDATE {parada}_abonos SET balance_prestamo = 0.0 ")
+      cur.execute(f"UPDATE {parada} SET balance_prestamo = 0.0 ")
       return
     else:       
       return 

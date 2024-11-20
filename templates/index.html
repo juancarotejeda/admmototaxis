@@ -300,9 +300,9 @@
             <li>
             <label for="abonar">ABONAR A:</label>
             <select name="descripcion_a" id="abonar">                 
-               <option value="Nigun Abono ">Nigun Abono</option>
-               {% for usuario in miembros %}
-               <option >{{usuario[1]}}</option>
+               <option ></option>
+               {% for usuario in prestamos %}
+               <option >{{usuario[0]}}</option>
                {%endfor%}
             </select>
             </li>

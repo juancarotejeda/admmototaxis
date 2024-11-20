@@ -368,87 +368,68 @@ font-size: 20px;
   background-color: #000000;
   color: white;
   font-size: 12px;
-  padding: 15px;
+  padding: 30px;
   width: auto;
-  height: 400px;
+  height: 350px;
   border:solid 10px LightSteelBlue;
-  margin-top: 5px;
+  border-radius: 10px;
+  margin-top: 30px;
   }
+      
+  .login-entrada fieldset{
+      border: none;
+      }
+      
+  .login-entrada h1{
+      text-align: center;
+      margin-bottom: 10px;            
+      }        
+      
+  .login-entrada  ol li{
+      line-height: 25px;
+      list-style: none;
+      list-style-type: none;
+    padding-top: 20px;
+      }
+      
   
-.login-entrada fieldset{
-  border: none;
-  }
+  .login-entrada select{
+          font-size:12px;
+          background: yellow;
+          border:solid 1px Green;
+          border-radius: 5px;
+          float: right;
+          margin-right: 20px;        
+          width: 250px;
+          height: 30px;
+        }
+
+
   
-.login-entrada h1{
-  text-align: center;
-  margin-bottom: 5px;            
-  }        
- 
-  .login-entrada h3{
-    text-align: center;
-    margin-bottom: 5px;            
-    }     
+  .login-entrada input{
+    font-size:12px;
+    background: yellow;
+    border:solid 1px Green;
+    border-radius: 5px;
+    float: right;
+    margin-right: 20px;  
+    height: 30px; 
+    width: 250px;
 
-.login-entrada  ol li{
-  line-height: 25px;
-  list-style: none;
-  list-style-type: none;
-padding-top: 20px;
-  }
+          }
   
-.login-entrada  [required]{
-  border:solid 1px red;
-  }
-  
-.login-entrada input:required {
-  outline: 1px solid red;
-  }
-
-.login-entrada select{
-      font-size:12px;
-      background: yellow;
-      border:solid 1px Green;
-      border-radius: 5px;
-      float: right;
-      margin-right: 20px;        
-      width: 250px;
-      height: 30px;
-    }
-
-.login-entrada select option{
-      background:white;
-      color:red;
-    }
-
-.login-entrada select option:disabled{
-      background: blue;
-    }
-
-.login-entrada input{
-  font-size:12px;
-  background: yellow;
-  border:solid 1px Green;
-  border-radius: 5px;
-  float: right;
-  margin-right: 20px;  
-  height: 30px; 
-  width: 250px;
-}
-
 .login-entrada button{
-  font-size:14px;
-  background: yellow;
-  color: black ;
-  border-radius: 5px;
-  float: right;
-  margin-right:20px; 
-  width: 250px;
-  height: 30px;
-  text-align: center;
-  padding-top: 5px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-}   
+font-size:12px;
+background: yellow;
+border:solid 1px Green;
+border-radius: 5px;
+float: right;
+margin-right: 20px; 
+margin-bottom: 10px; 
+height: 30px; 
+width: 250px;  
+}        
+
       
       
 .pago{
