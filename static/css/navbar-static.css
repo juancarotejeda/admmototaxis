@@ -23,20 +23,22 @@ body {
   }
   
   .publicidad{
-    align-items: center;
+    
     height: 150px;
     width: auto;
-    background: #000000;
-    color: white;
+    background-color: #e6dbdb;
     margin-bottom: 10px;
-    border-radius: 10px;
+  
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 10px;
   }
   
   .publicidad img{
-    height: 150px;
+    height: 145px;
     width: max-content; 
   }
   
@@ -52,7 +54,7 @@ body {
 
   @media (max-width:768px) {
   
-    .tables{
+    .container-tablas{
       min-width: 350px;
     }
   
@@ -203,95 +205,7 @@ body {
     margin-bottom: 10px;            
     } 
   
-/*=============================tablas===============================*/  
-    .tables{
-      background-color: #000000;
-      color: white;
-      font-size: 12px;
-      padding: 30px;
-      width: auto;
-      border:solid 10px LightSteelBlue inset;
-      overflow: scroll;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      }
-      
-  .tables fieldset{
-      border: none;
-      }
-      
-  .tables h1{
-      text-align: center;
-      margin-bottom: 10px;
-      }   
-      
-  .tables table{
-          margin: auto;  
-           width:350px;
-           text-align: center;
-         
-         }
-         
-         
-  .tables th, td {
-             width:min-content;
-             border: 0;
-             color: white;
-           }
-             
-  .tables  ol li{
-      line-height: 25px;
-      list-style: none;
-      list-style-type: none;
-    padding-top: 20px;
-      }
-      
-  
-  
-.tables select{
-      font-size:12px;
-      background: yellow;
-      border:solid 1px Green;
-      border-radius: 5px;
-      float: right;
-      margin-right: 10px;        
-      width: 120px;
-      height: 20px;
-}
-  
-.tables select option{
-        background:black;
-        color:red;
-}
-  
-.tables select option:disabled{
-        background: blue;
-}
-
-.tables input{
-  font-size:12px;
-  background: yellow;
-  border:solid 1px Green;
-  border-radius: 5px;
-  float: right;
-  margin-right: 40px;   
-  width: 80px;
-  height: 20px;
-  }  
-
-  .tables button{
-    font-size:12px;
-    background: yellow;
-    border:solid 1px Green;
-    color: #000;
-    border-radius: 5px;
-    float: right;
-    width: 92%;
-    height: 30px;
-    margin: top 5px;
-    margin-bottom: 10px;
-    margin-right: 30px;          
-}    
+ 
   
 /*-----------------------------------login-------------------------------*/
 .login{
@@ -324,10 +238,10 @@ body {
   border:solid 1px Green;
   border-radius: 5px;
   float: right;
-  width: auto;
+  width: 150px;
+  height: 30px;
   margin-right: 40px;
 
-  width: 150px;
   }
 
 .login button{
@@ -337,7 +251,8 @@ body {
   width: 150px;
   height: 30px;
   float: right;
-  margin-right: 100px;
+  margin-right: 40px;
+ 
   color: #000000;
   border-radius: 5px;
 
@@ -433,13 +348,14 @@ width: 250px;
       
       
 .pago{
-  background-color: #000000;
-  color: white;
+  background-color: #e6dbdb;
+  color: #000000;
   font-size: 12px;
   width: auto;
   border:solid 5px LightSteelBlue;
+  padding-bottom: 10px;
   margin-bottom: 10px;
-  height: 325px;
+  
 }
   
   .pago fieldset{
@@ -463,10 +379,10 @@ width: 250px;
   .pago select{
     font-size:12px;
     background: yellow;
+    color: #000000;
     border-radius: 5px;
     width: 150px;
     height: 30px;
-    margin-top: 10px;
     margin-right: 30px;
     float: right;
   }
@@ -482,35 +398,95 @@ width: 250px;
     .pago input{
       font-size:12px;
       background: yellow;
+      color: #000000;
       border-radius: 5px;
       float: right;
       width: 150px;
       height: 30px;
-      margin: top 5px;
-      margin-bottom: 10px;
       margin-right: 30px;
       }
 
-  .pago button{
+  .pago button {
       font-size:12px;
       background: yellow;
+      color: #000000;
       border-radius: 5px;
       float: right;
-      width: 92%;
+      width: 150px;
       height: 30px;
-      margin: top 5px;
-      margin-bottom: 10px;
       margin-right: 30px;
      
       }  
 
+      .container-tablas {
+        background-color: #e6dbdb;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        width: auto;
+        border:solid 5px LightSteelBlue;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+
+   .tables{
+    background-color: #d1c7c7;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    width: auto;
+    margin: 0px auto;
+       
+  }    
+
+  .tables button {
+    font-size:12px;
+    background: yellow;
+    color: #000000;
+    border-radius: 5px;
+    float: right;
+    width: 150px;
+    height: 30px;
+    margin-right: 30px;
+   
+    } 
+    
+    .tables button[type="reset"] {
+      font-size:12px;
+      background: rgb(55, 255, 0);
+      color: #000000;
+      border-radius: 5px;
+      float: right;
+      width: 150px;
+      height: 30px;
+      margin-right: 30px;
+     
+      }   
+
+
+    .tables select {
+      font-size:12px;
+      background: yellow;
+      color: #000000;
+      border-radius: 5px;
+      float: right;
+      width: 150px;
+      height: 30px;
+      margin-right: 30px;
+     
+      } 
+
+
       .bt-modal {
         width: 100%;
         height: 10%;
-        background: #000000;
+        background: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 10px;
+        padding-bottom: 5px;
       }      
 
       .bt-regresar label{

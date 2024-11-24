@@ -13,7 +13,7 @@
   </head>
   <body>
   <div id="regreso"></div>   
-  <div class="container">
+  
     <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img class="logo" src="/static/favicon/favicon-32x32.png" alt="logo">   MOTOTAXISTAS</a>
@@ -61,14 +61,14 @@
       </div>
       </div>
       </nav>
-      </div>
       <div class="publicidad">
          <img  src="/static/imagen/barrio_seguro-intran.gif" alt="publicidad">
-      </div>      
-      <section id="lista_pagos">
-      <fieldset class="tables">
+      </div>  
+      <div class="container">   
+      <section id="lista_pagos"> 
+      <fieldset class="pago">
       <form action="/data_cuotas" method="POST">   
-      <legend><h1>LISTA DE PAGOS</h1></legend> 
+         <h1>LISTA DE PAGOS</h1> 
          <ol>
          <li>
          <label for="paradas">PARADA:</label>             
@@ -89,41 +89,43 @@
          {%endfor%}
          </li>
          </ol>
-         <table>
+         </fieldset>
+         <fieldset class="container-tablas">
+         <table class="tables">
          <tr>
             <th>ITEM</th>
-            <th>PAGO</th>
-            <th>NOMBRE_DEL_ASOCIADO</th>
+            <th> ASOCIADOS</th>
             <th>CEDULA</th>
+            <th>PAGO</th>            
          </tr>
-         {% for user in datos %}
-         <tr>
-            <td>
-             {{ user[0]}}
-             <input type="hidden" value="{{ user[0]}}" name="item">
+          {% for user in datos %}
+         <tr> 
+            <td>         
+             <input type="hidden" value="{{ user[0]}}" name="item">{{ user[0]}}
+            </td>
+             <td>          
+            <input type="hidden" value="{{ user[1]}}" name="nombre">{{ user[1]}}
             </td>
             <td>
-            <label for="estado" > estado</label>   
-            <select name="select" id="estado">
-                  <optgroup label="Estado">  
-                  <option selected >no_pago</option>
-                  <option >pago</option>
-                  </optgroup>
+            <input type="hidden" value="{{ user[2]}}" name="cedula">{{ user[2]}}
+            </td>
+            <td>  
+            <select name="select"> 
+                  <option value="no-pago" >cuota no pagada</option>
+                  <option value="pago">cuota pagada</option>
             </select>
             <input type="hidden" value="select" name="estado">
             </td>
-            <td>
-            {{ user[1]}}
-            <input type="hidden" value="{{ user[1]}}" name="nombre">
-            </td>
-            <td>
-            {{ user[2]}}
-            <input type="hidden" value="{{ user[2]}}" name="cedula">
-            </td>
          </tr>
-         {%endfor%}
+         {%endfor%} 
+         <tr>
+          <td colspan="4">
+         <button type="submit">Enviar</button>
+         <button type="reset">Limpiar</button>
+        </td>
+         </tr>
+         </form>  
       </table>
-      <button type="submit">ENVIAR</button>
       <div class="bt-modal">
       <div class="boton-modal">
         <label for="btn-listado">
@@ -135,9 +137,7 @@
         <a href="#regreso">regreso</a> 
       </label>
       </div>
-      </div>     
-      </div>
-      </form>
+      </div>        
       </fieldset>
       </section> 
       <section id="ingresos" >
@@ -170,8 +170,10 @@
         <label for="cantidad">CANTIDA:</label>
         <input type="text" name="cantidad_i" id="cantidad" required>
         </li>
+        <li>
+          <button type="submit">ENVIAR</button>
+        </li>
         </ol>
-        <button type="submit">ENVIAR</button>
         <div class="bt-modal">
         <div class="boton-modal">
           <label for="btn-ingreso">
@@ -182,6 +184,7 @@
           <label for="regreso">
           <a href="#regreso">regreso</a> 
         </label>      
+        </div>
         </div>
         </fieldset>
         </form>   
@@ -218,8 +221,10 @@
           <label for="cantidad" >CANTIDA:</label>
           <input type="text" name="cantidad_g"id="cantidad" required >
           </li>
+          <li>
+            <button type="submit">ENVIAR</button>            
+          </li>
           </ol>
-          <button type="submit">ENVIAR</button>
           <div class="bt-modal">
           <div class="boton-modal">
             <label for="btn-gastos">
@@ -231,10 +236,10 @@
             <a href="#regreso">regreso</a> 
           </label>         
           </div>
+          </div>
           </form>
           </fieldset>
           </section>
-
         <section id="Prestamos" >
           <fieldset class="pago"> 
           <form action="/data_prestamos" method="POST">  
@@ -264,8 +269,10 @@
           <label for="monto">MONTO:</label>
           <input type="text" name="cantidad_p" id="monto" required>
           </li>
+          <li>
+            <button type="submit">ENVIAR</button>            
+          </li>
           </ol>
-          <button type="submit">ENVIAR</button>
           <div class="bt-modal">
             <div class="boton-modal">
               <label for="btn-prestamos">
@@ -277,6 +284,7 @@
               <a href="#regreso">regreso</a> 
             </label>          
             </div>
+          </div>
           </form>
           </fieldset>
           </section>
@@ -311,8 +319,10 @@
             <label for="cantidad">CANTIDA:</label>
             <input type="text" name="cantidad_a" id="cantidad"  value=0.0>
             </li>
+            <li>
+              <button type="submit">ENVIAR</button> 
+            </li>
             </ol> 
-            <button type="submit">ENVIAR</button> 
             <div class="bt-modal">
               <div class="boton-modal">
                 <label for="btn-abonos">
@@ -324,6 +334,7 @@
                 <a href="#regreso">regreso</a> 
               </label>             
               </div>
+            </div>
          </fieldset>
          </section>
       <section id="banco">
@@ -331,7 +342,7 @@
         <form action="/data_bancos" method="post"> 
         {%for datos in informacion %}   
         <input type="hidden" name="parada" value="{{datos[1]}}" id="parada">      
-        <legend><h1>REPORTE BANCARIO</h1></legend>      
+         <h1>REPORTE BANCARIO</h1>     
         <ol>    
         <li>   
         <h1>PARADA:{{datos[1]}}</h1>
@@ -365,6 +376,8 @@
       </li>
       <li>
          <button type="submit">ENVIAR</button>
+      </li> 
+      </ol>           
          <div class="bt-modal">
           <div class="boton-modal">
             <label for="btn-abonos">
@@ -376,15 +389,12 @@
             <a href="#regreso">regreso</a> 
           </label>             
           </div>         
-        </div>
-
-
-      </li> 
-      </ol>   
+        </div> 
       {%endfor%}
       </form>     
       </fieldset>
-      </section>   
+      </section> 
+
       <input type="checkbox" id="btn-listado">        
       <div class="container-listado">
       <div class="content-vu">  
@@ -490,6 +500,7 @@
               <label for="btn-abonos">Cerrar</label>
           </div>
         </div>
-        </div>      
+        </div>  
+      </div>       
   </body>
 </html>
