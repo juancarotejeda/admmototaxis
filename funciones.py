@@ -80,18 +80,19 @@ def aportacion(cur,parada):
     data=cur.fetchall()
     return data
   
-def verif_p(cur,parada,cedula,password):
-    cur.execute(f"SELECT * FROM tabla_index WHERE  adm_password = '{password}'")
-    result=cur.fetchall()
-    if result:
-      cur.execute(f"SELECT * FROM {parada} WHERE  cedula = '{cedula}'")                                       
-      accounts =cur.fetchall()
-      if accounts != []:
+def verif_p(cur,parada,cedula):
+    pres=[]
+    cur.execute(f"SELECT funcion FROM {parada} WHERE  cedula = '{cedula}'")                                       
+    funciones =cur.fetchall()
+    for funcion in funciones:
+        pres=funcion[0]
+    if pres != []:
+        if pres =='Presidente':
          return True
-      else:
-         return False 
-    else: 
-        return False
+        else:
+            return False 
+    else:
+         return False     
 
 def crear_p(cur,parada,string,valor_cuota,hoy):
        suma_no=[];suma_si=[]
@@ -139,10 +140,13 @@ def prestamo_aport(cur,parada):
       return [] 
 
 def lista_prestamos(cur,parada):
-    nom=[]
-    cur.execute(f"SELECT prestamo_a FROM {parada}_prestamos")
-    nombres=cur.fetchall()
-    return nombres
+    cur.execute(f"SHOW TABLES LIKE '{parada}_prestamos'")
+    vericar=cur.fetchall()
+    if vericar !=[]:
+      cur.execute(f"SELECT prestamo_a FROM {parada}_prestamos")
+      nombres=cur.fetchall()
+      return nombres
+    return []
 
 def verif_dig(cur,nombre,password):
     cur.execute(f"SELECT username FROM digitadores WHERE password='{password}'")

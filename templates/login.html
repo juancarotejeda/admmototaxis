@@ -19,6 +19,7 @@
 <fieldset class="login-entrada">
     <form  method='POST' action="/login">    
     <h1>GRUPO ACTEC </h1>
+    <h2>Presidente</h2>
     <ol>  
     <li>  
     {% with messages = get_flashed_messages()%}
@@ -43,10 +44,6 @@
     <li>     
       <label for="cedula">Cedula</label>
       <input type="text" name="cedula" id="cedula" placeholder="Cedula" required>       
-    </li>
-    <li> 
-      <label for="clave">Clave</label>
-      <input type="password" id="clave" name="clave" placeholder="Contraseña" required>    
     </li>
     </ol>
     <button type="submit"  class="button">ENTRAR</button>

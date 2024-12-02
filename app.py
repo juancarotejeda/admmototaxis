@@ -37,12 +37,11 @@ def log():
     msg = ''
     global parada 
     account=[]
-    if 'parada' in request.form and 'cedula' in request.form and 'clave' in request.form:
+    if 'parada' in request.form and 'cedula' in request.form:
         parada = request.form['parada']
         cedula = request.form['cedula']
-        password = request.form['clave']
         cur = connection.cursor()
-        account=funciones.verif_p(cur,parada,cedula,password) 
+        account=funciones.verif_p(cur,parada,cedula) 
         if account ==True:
             fecha = datetime.strftime(datetime.now(),"%Y %m %d - %H")  
             informacion=funciones.info_parada(cur,parada) 

@@ -1,6 +1,8 @@
 body {
     padding-bottom: 20px;
-    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    
   }
   
   .navbar {
@@ -29,17 +31,11 @@ body {
     background-color: #e6dbdb;
     margin-bottom: 10px;
   
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin-left: 10px;
   }
   
   .publicidad img{
     height: 145px;
-    width: max-content; 
+    width: 100%; 
   }
   
   @media (min-width: 768px) {
@@ -205,67 +201,6 @@ body {
     margin-bottom: 10px;            
     } 
   
- 
-  
-/*-----------------------------------login-------------------------------*/
-.login{
-            
-  background-color:black;
-  color: white;
-  font-size: 12px;
-  padding: 30px;
-  width: auto;
-  border:solid 10px LightSteelBlue;
-  overflow: hidden;
-  margin-bottom: 10px;
-  }
-
-  .login  ol li{
-      line-height: 25px;
-      list-style: none;
-      padding: 4px;
-      }
-
-  .login h1{
-          text-align: center;
-          margin-bottom: 10px;            
-          }                 
-  
-
-  .login input{
-  font-size:12px;
-  background: yellow;
-  border:solid 1px Green;
-  border-radius: 5px;
-  float: right;
-  width: 150px;
-  height: 30px;
-  margin-right: 40px;
-
-  }
-
-.login button{
-  font-size:12px;
-  background: yellow;
-  border:solid 1px Green;
-  width: 150px;
-  height: 30px;
-  float: right;
-  margin-right: 40px;
- 
-  color: #000000;
-  border-radius: 5px;
-
-  }
-  
-.login input[type="password"]{
-  font-size: 12px;
-  width: 150px;
-  height: 20px;
-  padding: 10px;
-  border: none;
-  background:  yellow;
-}    
 
 .msg{
 color: rgb(255, 87, 20);
@@ -280,9 +215,10 @@ font-size: 20px;
 
 
 .login-entrada{
-  background-color: #000000;
-  color: white;
+  background: rgb(86, 137, 154);
+  color: #000000;
   font-size: 12px;
+  font-weight: 700;
   padding: 30px;
   width: auto;
   height: 350px;
@@ -297,9 +233,17 @@ font-size: 20px;
       
   .login-entrada h1{
       text-align: center;
-      margin-bottom: 10px;            
+      margin-bottom: 10px; 
+      color: blue;           
       }        
-      
+  
+  .login-entrada h2{
+     text-align: center;
+color: #fe2701;            
+    }        
+
+
+
   .login-entrada  ol li{
       line-height: 25px;
       list-style: none;
@@ -502,6 +446,13 @@ width: 250px;
         background-color: #6a0401;
       }
 
+      .bt-regresar a {
+       text-decoration: none;
+       color: #ffffff;
+       font-weight: 700;
+      }
+
+
       #bt-regresar{
         display: none;
       }
@@ -557,7 +508,7 @@ width: 250px;
   position: relative;
   top: 20; left: 20;
   padding: 20px;
-  background: #0157f7;
+  background: #d3e1f9;
   border-radius: 10px;
   display: flex;
   justify-content: center;
